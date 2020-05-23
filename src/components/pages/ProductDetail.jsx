@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const ProductDetail = () => {
-	let x = 0;
-
 	return (
 		<section
 			className="page-section page-section--product-detail"
