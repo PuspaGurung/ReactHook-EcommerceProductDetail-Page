@@ -1,0 +1,41 @@
+// CONTAINER
+.container {
+  width: 120rem;
+  margin: 0 auto;
+}
+
+// PAGE-SECTION
+.page-section {
+  padding: 5rem 0;
+}
+// HEADINGS
+h1.heading-primary {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  font-family: inherit;
+}
+
+h2.heading-secondary {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0;
+  color: $color-least;
+}
+
+h3.heading-tertiary {
+  font-size: 1.6rem;
+  margin-bottom: 1.5;
+  font-weight: 300;
+  color: $color-least;
+}
+
+// BUTTONS
+.btn {
+  font-family: inherit;
+  font-size: 1.8rem;
+  line-height: initial;
+  border: none;
+  padding: 1rem 2.5rem;
+  color: $color-best;
+}

@@ -1,0 +1,53 @@
+html {
+  font-size: 62.5; // 1rem = 10px; (100/16)*10 = 62.5%;
+  /* 1 */
+  -webkit-text-size-adjust: 62.5;
+  /* 2 */
+  -ms-text-size-adjust: 62.5;
+  /* 2 */
+  box-sizing: border-box;
+
+  // font size in differetn size of screen width
+  @include respond-mediaQuery(big-screen) {
+    font-size: 62.5%; // 1rem = 10px; (100/16)*10 = 62.5%;
+  }
+
+  @include respond-mediaQuery(laptop) {
+    font-size: 56.25%; // 1rem = 9px; (100/16)*9= 56.25%;
+  }
+
+  @include respond-mediaQuery(ipad-pro) {
+    font-size: 46.88%; // 1rem = 7.5px; (100/16)*7= 43.75%;
+  }
+
+  @include respond-mediaQuery(ipad) {
+    font-size: 43.75%; // 1rem = 7px; (100/16)*7= 43.75%;
+  }
+
+  @include respond-mediaQuery(phone) {
+    font-size: 40%; // 1rem = 6.4px; (100/16)*6.4= 40%;
+  }
+
+  //scroll-behavior: smooth;
+}
+
+body {
+  font-family: map-get($font-family, 'font-primary');
+  font-weight: map-get($font-weight, 'regular');
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: $color-tertiary-1;
+  text-rendering: optimizeSpeed;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after,
+body,
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}

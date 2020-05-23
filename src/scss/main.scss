@@ -1,0 +1,19 @@
+/*
+** IMPORT PARTIAL SCSS: 
+*/
+
+// Variables
+@import './variables';
+
+//Mixins
+@import './mixins/box-shadow', 'mixins/media-query', 'mixins/transition-delay',
+  './mixins/border-radius';
+
+// Utilities
+@import './utilities/utilities';
+
+// Base
+@import './base';
+
+// Components
+@import './components/header-footer';
