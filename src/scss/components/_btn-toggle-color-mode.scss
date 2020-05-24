@@ -13,11 +13,12 @@
     &:checked~.toggle-color-mode__label-1 {
       &::after {
         left: 3rem !important;
+        background-color: $color-secondary-1;
       }
 
       &::before {
-        background-color: $color-primary-1;
-        border-color: $color-primary-1;
+        background-color: rgba($color-tertiary-1, 0.95);
+        border-color: rgba($color-tertiary-1, 0.95);
       }
     }
   }
@@ -60,7 +61,7 @@
 
   &__label-2 {
     margin-top: 1rem;
-    color: $color-tertiary-2;
+    color: $color-least;
     text-transform: uppercase;
     font-size: 1.6rem;
   }

@@ -1,0 +1,8 @@
+#products {
+  .product-item-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    margin: 0 -1rem;
+  }
+}

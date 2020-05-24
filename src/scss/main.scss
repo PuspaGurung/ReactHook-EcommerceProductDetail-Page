@@ -7,7 +7,7 @@
 
 //Mixins
 @import './mixins/box-shadow', 'mixins/media-query', 'mixins/transition-delay',
-  './mixins/border-radius';
+'./mixins/border-radius';
 
 // Utilities
 @import './utilities/utilities';
@@ -16,4 +16,4 @@
 @import './base';
 
 // Components
-@import './components/header-footer', './components/btn-toggle-color-mode';
+@import './components/header-footer', './components/loader', './components/product-card', './components/products', './components/btn-toggle-color-mode';

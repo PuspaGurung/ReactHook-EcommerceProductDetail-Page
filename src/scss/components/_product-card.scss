@@ -1,0 +1,41 @@
+.product-item {
+  position: relative;
+  width: 22%;
+  margin: 0 1.5rem 3rem;
+  @include transition-delay-sm;
+  @include box-shadow-md;
+  @include border-r-sm;
+
+  &:hover {
+    @include box-shadow-lg;
+  }
+
+  &__img {
+    img {
+      width: 100%;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+
+  &__info {
+    padding: 2rem 3rem;
+
+    .product-title {}
+
+    .product-price {
+      display: inline-block;
+      color: $color-secondary-3;
+    }
+  }
+
+  &__anchor {
+    position: absolute;
+    z-index: 600;
+    text-indent: -9999px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

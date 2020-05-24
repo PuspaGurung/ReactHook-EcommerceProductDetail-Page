@@ -64,17 +64,15 @@ const ContextApi = (props) => {
 
   function getInitialMode() {
     const isReturningUser = 'dark' in localStorage;
-    const userPrefersDarkMode = getPreferColorScheme();
+    const userPrefersDarkMode = getPreferColorMode();
     const savedMode = JSON.parse(localStorage.getItem('dark'));
-
     // 1.) if suer already visited the page and mode was saved either 'dark' or 'light' return saved mode
     // 2.) if prefered color mode is dark return true
     // 3.) otherwise return  false i.e dark mode would be false in firit visit of the site
-
     return isReturningUser ? savedMode : userPrefersDarkMode ? true : false;
   }
 
-  function getPreferColorScheme() {
+  function getPreferColorMode() {
     if (!window.matchMedia) return '';
     return window.matchMedia('(prefers-color-scheme:dark)').matches;
   }
