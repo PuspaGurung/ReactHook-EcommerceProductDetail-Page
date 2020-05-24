@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
+import Wrapper from '../ui/Wrapper';
 
 const ProductDetail = () => {
-	return (
-		<section
-			className="page-section page-section--product-detail"
-			id="product-detail"
-		>
-			Product detail page
-		</section>
-	);
+  const propsWrapper = {
+    tagName: 'section',
+    className: 'page-section--product-detail',
+    id: 'product-detail',
+  };
+  return <Wrapper propsWrapper={propsWrapper}>Product detail page</Wrapper>;
 };
 
 export default ProductDetail;

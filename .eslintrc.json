@@ -68,6 +68,9 @@
     "react/require-prop-types": 0,
     //"react/jsx-indent-props": "off",
     "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0
+    "import/no-named-as-default-member": 0,
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-nested-ternary": "off",
+    "no-unneeded-ternary": "off"
   }
 }

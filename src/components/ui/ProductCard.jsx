@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 function ProductCard() {
-	return <div className="product-item">Product card</div>;
+  return <div className="product-item">Product card</div>;
 }
 
 export default ProductCard;
