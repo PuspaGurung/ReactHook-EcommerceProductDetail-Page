@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, Footer } from '../components/headerFooter';
 import Wrapper from '../components/ui/Wrapper';
-import ContextAPI from '../contextAPI';
+import ContextApi from '../contextApi';
 
 const Layout = (props) => {
   const { children } = props;
@@ -11,13 +11,13 @@ const Layout = (props) => {
     id: 'body-wrapper',
   };
   return (
-    <ContextAPI>
+    <ContextApi>
       <Wrapper propsWrapper={propsWrapper}>
         <Header />
         <main>{children}</main>
         <Footer />
       </Wrapper>
-    </ContextAPI>
+    </ContextApi>
   );
 };
 

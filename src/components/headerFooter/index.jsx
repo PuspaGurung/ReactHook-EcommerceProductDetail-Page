@@ -1,12 +1,12 @@
 import React from 'react';
-import BtnToggleAppColor from '../ui/BtnToggleAppColor';
+import BtnToggleColorMode from '../ui/BtnToggleColorMode';
 
 const Header = () => {
   return (
     <header className="page-header" id="page-header">
       <div className="container">
         <div className="header-wrapper">
-          <BtnToggleAppColor />
+          <BtnToggleColorMode />
         </div>
       </div>
     </header>

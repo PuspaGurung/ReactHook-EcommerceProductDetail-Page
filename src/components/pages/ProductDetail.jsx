@@ -1,13 +1,7 @@
-import React from 'react';
-import Wrapper from '../ui/Wrapper';
+import React, { useContext } from 'react';
 
-const ProductDetail = () => {
-  const propsWrapper = {
-    tagName: 'section',
-    className: 'page-section--product-detail',
-    id: 'product-detail',
-  };
-  return <Wrapper propsWrapper={propsWrapper}>Product detail page</Wrapper>;
+const ProductDetail = (props) => {
+  return <div className="product-wrapper">product detail page</div>;
 };
 
 export default ProductDetail;
