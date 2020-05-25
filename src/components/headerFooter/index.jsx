@@ -3,7 +3,10 @@ import BtnToggleColorMode from '../ui/BtnToggleColorMode';
 
 const Header = () => {
   return (
-    <header className="page-header" id="page-header">
+    <header
+      className="page-header"
+      id="page-header"
+    >
       <div className="container">
         <div className="header-wrapper">
           <BtnToggleColorMode />
@@ -15,12 +18,19 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <footer className="page-footer" id="page-footer">
+    <footer
+      className="page-footer"
+      id="page-footer"
+    >
       <div className="container">
         <div className="footer-wrapper">
           <p>
             <small>
-              &copy; {new Date().getFullYear()} Copyright: Lorem ipsum dolor sit
+              &copy; 
+              {' '}
+              {new Date().getFullYear()}
+              {' '}
+              Copyright: Lorem ipsum dolor sit
               amet.
             </small>
           </p>

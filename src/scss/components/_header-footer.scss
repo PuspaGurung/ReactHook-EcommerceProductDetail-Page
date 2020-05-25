@@ -1,6 +1,7 @@
 #page-header {
-  background-color: $color-best;
+  background-color: $color-primary-1;
   @include box-shadow-md;
+
   .header-wrapper {
     padding: 3rem 0;
     display: flex;
@@ -13,11 +14,12 @@
 #page-footer {
   background-color: $color-secondary-2;
   @include box-shadow-md;
+
   .footer-wrapper {
     width: 100%;
     display: inline-block;
     padding: 1.5rem 0 2rem;
     text-align: center;
-    color: $color-best;
+    color: $color-primary-1;
   }
 }

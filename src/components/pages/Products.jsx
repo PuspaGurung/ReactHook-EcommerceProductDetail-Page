@@ -6,7 +6,10 @@ import ProductCard from '../ui/ProductCard';
 const Products = () => {
   const fetchData = useContext(ProductsContext);
   return (
-    <section id="products" className="page-section page-section--products">
+    <section
+      id="products"
+      className="page-section page-section--products"
+    >
       <div className="container">
         {fetchData.loading ? (
           <Loader />

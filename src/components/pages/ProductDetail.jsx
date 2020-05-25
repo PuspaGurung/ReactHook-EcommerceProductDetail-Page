@@ -7,6 +7,7 @@ const ProductDetail = (props) => {
   const products = useContext(ProductsContext);
   const firstProduct = useContext(ProductDetailContext);
 
+  // eslint-disable-next-line
   const productId = props.match.params.id;
 
   const getProductDetail = (id) => {
@@ -28,22 +29,34 @@ const ProductDetail = (props) => {
               <div className="product__img-secondary">
                 {firstProductData.images.other_images.map((image) => {
                   return (
-                    <div key={image} className="image_item">
-                      <img src={image} alt="product" />
+                    <div
+                      key={image}
+                      className="image_item"
+                    >
+                      <img
+                        src={image}
+                        alt="product"
+                      />
                     </div>
                   );
                 })}
               </div>
 
               <div className="product__img-main">
-                <img src={firstProductData.images.main_image} alt="product" />
+                <img
+                  src={firstProductData.images.main_image}
+                  alt="product"
+                />
               </div>
             </div>
             <div className="product__detail">
               <h2 className="product-title heading-secondary">
                 {firstProductData.title}
               </h2>
-              <span className="product-price">$ {firstProductData.price}</span>
+              <span className="product-price">
+                $
+                {firstProductData.price}
+              </span>
               <p className="product-desc">{firstProductData.description}</p>
             </div>
           </div>
@@ -61,7 +74,10 @@ const ProductDetail = (props) => {
                 return (
                   <div className="product-item">
                     <div className="product-item__img">
-                      <img src={product.images.main_image} alt="product" />
+                      <img
+                        src={product.images.main_image}
+                        alt="product"
+                      />
                     </div>
                     <div className="product-item__info">
                       <h3 className="heading-tertiary">{product.title}</h3>
@@ -71,8 +87,7 @@ const ProductDetail = (props) => {
                       to={`/product/${product.id}`}
                       className="product-item__anchor"
                     >
-                      {' '}
-                      Link to product detail{' '}
+                      Link to product detail
                     </Link>
                   </div>
                 );
@@ -83,11 +98,15 @@ const ProductDetail = (props) => {
       </div>
     );
 
+    // eslint-disable-next-line
     return id == 1
       ? firstProductLayout
       : products.data.map((product) => {
           const htmlContent = (
-            <div key={product.id} className="product-wrapper">
+            <div
+              key={product.id}
+              className="product-wrapper"
+            >
               <header className="section-header">
                 <ul className="breadcrumb ">
                   <li>
@@ -103,22 +122,34 @@ const ProductDetail = (props) => {
                     <div className="product__img-secondary">
                       {product.images.other_images.map((image) => {
                         return (
-                          <div key={image} className="image_item">
-                            <img src={image} alt="product" />
+                          <div
+                            key={image}
+                            className="image_item"
+                          >
+                            <img
+                              src={image}
+                              alt="product"
+                            />
                           </div>
                         );
                       })}
                     </div>
 
                     <div className="product__img-main">
-                      <img src={product.images.main_image} alt="product" />
+                      <img
+                        src={product.images.main_image}
+                        alt="product"
+                      />
                     </div>
                   </div>
                   <div className="product__detail">
                     <h2 className="product-title heading-secondary">
                       {product.title}
                     </h2>
-                    <span className="product-price">$ {product.price}</span>
+                    <span className="product-price">
+                      $
+                      {product.price}
+                    </span>
                     <p className="product-desc">{product.description}</p>
                   </div>
                 </div>
@@ -133,12 +164,16 @@ const ProductDetail = (props) => {
                   </header>
                   <div className="product-wrapper">
                     <div className="product-item">
-                      <img src={product.category.image} alt="product" />
+                      <img
+                        src={product.category.image}
+                        alt="product"
+                      />
                       <Link
                         to={`/product/${product.id}`}
                         className="product-item__anchor"
                       >
-                        Link to product detail{' '}
+                        Link to product detail
+                        {' '}
                       </Link>
                     </div>
                   </div>
@@ -146,13 +181,16 @@ const ProductDetail = (props) => {
               </div>
             </div>
           );
-
+          // eslint-disable-next-line
           return product.id == id ? htmlContent : '';
         });
   };
 
   return (
-    <section id="product-detail" className="product-detail">
+    <section
+      id="product-detail"
+      className="product-detail"
+    >
       <div className="container">
         {productId == 1 ? (
           firstProduct.loading ? (

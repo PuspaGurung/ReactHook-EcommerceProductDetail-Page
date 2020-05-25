@@ -10,9 +10,20 @@ const Router = () => {
   return (
     <Layout>
       <Switch>
-        <Route path="/" component={Products} exact />
-        <Route path="/product/:id" component={ProductDetail} exact />
-        <Route path="*" component={NotFoundPage} />
+        <Route
+          path="/"
+          component={Products}
+          exact
+        />
+        <Route
+          path="/product/:id"
+          component={ProductDetail}
+          exact
+        />
+        <Route
+          path="*"
+          component={NotFoundPage}
+        />
       </Switch>
     </Layout>
   );
