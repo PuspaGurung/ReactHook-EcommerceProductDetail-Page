@@ -6,6 +6,15 @@
   @include box-shadow-md;
   @include border-r-sm;
 
+  @include respond-mediaQuery(ipad) {
+    width: 47%;
+    margin-bottom: 4rem;
+  }
+
+  @include respond-mediaQuery(phone) {
+    width: 100%;
+  }
+
   &:hover {
     @include box-shadow-lg;
   }

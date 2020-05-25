@@ -1,7 +1,19 @@
+// BODY-WRAPPER
+.body-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
 // CONTAINER
 .container {
   width: 120rem;
   margin: 0 auto;
+
+  @include respond-mediaQuery(ipad) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
 }
 
 // PAGE-SECTION

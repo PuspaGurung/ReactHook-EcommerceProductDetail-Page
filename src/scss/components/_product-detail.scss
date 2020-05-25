@@ -18,16 +18,28 @@
             justify-content: space-between;
             margin-bottom: 6rem;
 
+            @include respond-mediaQuery(phone) {
+                flex-flow: column;
+            }
 
 
             &__img {
                 display: flex;
                 width: 65%;
                 padding-right: 2rem;
+                margin-bottom: 4rem;
+
+                @include respond-mediaQuery(phone) {
+                    width: 100%;
+                }
 
                 &-secondary {
                     width: 24%;
                     padding-right: 4rem;
+
+                    @include respond-mediaQuery(phone) {
+                        width: 30%;
+                    }
 
                     .image_item {
                         margin-bottom: 3rem;
@@ -37,12 +49,20 @@
 
                 &-main {
                     width: 68%;
+
+                    @include respond-mediaQuery(phone) {
+                        width: 70%;
+                    }
                 }
             }
 
             &__detail {
                 width: 35%;
                 padding-left: 2rem;
+
+                @include respond-mediaQuery(phone) {
+                    width: 100%;
+                }
 
                 span.product-price {
                     text-transform: uppercase;
@@ -78,6 +98,8 @@
                         background-color: $color-best;
                         padding: 1.5rem;
                         display: inline-block;
+                        position: relative;
+                        z-index: 2
                     }
 
                     &::before {
@@ -94,6 +116,8 @@
                         -moz-transform: translateY(-50%);
                         -ms-transform: translateY(-50%);
                         -o-transform: translateY(-50%);
+
+                        z-index: 1;
                     }
 
                 }

@@ -14,10 +14,20 @@
         background-color: $color-secondary-1;
     }
 
+    h2.heading-secondary {
+        color: $color-tertiary-2;
+    }
+
     #product-detail .product-wrapper .product__detail .product-desc,
     h3.heading-tertiary,
-    #product-detail .product-wrapper .product__detail span.product-price {
+    #product-detail .product-wrapper .product__detail span.product-price,
+    .breadcrumb li.active,
+    .breadcrumb a:hover {
         color: $color-tertiary-1;
+    }
+
+    #product-detail .product-wrapper .related-product .section-header .section-title::before {
+        background-color: $color-tertiary-1;
     }
 
     .product-item,
