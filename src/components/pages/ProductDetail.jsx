@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../contextApi';
+import { Link } from 'react-router-dom';
 import Loader from '../ui/Loader';
 
 const ProductDetail = (props) => {
@@ -12,6 +13,15 @@ const ProductDetail = (props) => {
     return fetchData.data.map((product) => {
       const htmlContent = (
         <div key={product.id} className="product-wrapper">
+          <header className="section-header">
+            <ul className="breadcrumb ">
+              <li>
+                <Link to="/"> Home </Link>
+                <span className="seperator"></span>
+              </li>
+              <li className="active">Product</li>
+            </ul>
+          </header>
           <div className="row">
             <div className="product">
               <div className="product__img">
@@ -33,14 +43,20 @@ const ProductDetail = (props) => {
                 <h2 className="product-title heading-secondary">
                   {product.title}
                 </h2>
-                <span className="product-price">{product.price}</span>
+                <span className="product-price">${product.price}</span>
                 <p className="product-desc">{product.description}</p>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="related-product">
-              <h2 className="heading-secondary">Related Products</h2>
+              <header className="section-header">
+                <div className="section-title">Related Products </div>
+                <div className="product-type">
+                  {' '}
+                  <span>{product.category.name}</span>{' '}
+                </div>
+              </header>
               <div className="product-wrapper">
                 <div className="product-item">
                   <img src={product.category.image} alt="product" />

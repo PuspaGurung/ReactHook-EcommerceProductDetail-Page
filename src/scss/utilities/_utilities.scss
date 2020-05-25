@@ -8,6 +8,7 @@
 .page-section {
   padding: 5rem 0;
 }
+
 // HEADINGS
 h1.heading-primary {
   font-size: 3.5rem;
@@ -17,17 +18,20 @@ h1.heading-primary {
 }
 
 h2.heading-secondary {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0;
+  text-transform: uppercase;
+  margin: 4rem 0;
+  font-weight: bold;
   color: $color-least;
 }
 
 h3.heading-tertiary {
   font-size: 1.6rem;
-  margin-bottom: 1.5;
-  font-weight: 300;
-  color: $color-least;
+  font-weight: 800;
+  color: $color-secondary-1;
+  margin: 0 0 1.5rem;
 }
 
 // BUTTONS
@@ -38,4 +42,48 @@ h3.heading-tertiary {
   border: none;
   padding: 1rem 2.5rem;
   color: $color-best;
+}
+
+// SECTION-HEADER
+.section-header {
+  padding: 3rem 0 5rem;
+
+}
+
+// BREADCRUMB
+.breadcrumb {
+  a {
+    color: $color-secondary-3;
+
+    &:hover {
+      color: $color-secondary-1;
+    }
+  }
+
+  .seperator {
+    height: 15px;
+    width: 1px;
+    background-color: $color-secondary-3;
+    display: inline-block;
+    transform: rotate(28deg);
+    -webkit-transform: rotate(28deg);
+    -moz-transform: rotate(28deg);
+    -ms-transform: rotate(28deg);
+    -o-transform: rotate(28deg);
+    margin-left: 1rem;
+
+  }
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 1rem;
+    position: relative;
+    color: $color-secondary-3;
+    font-size: 1.4rem;
+
+    &.active {
+      color: $color-least;
+    }
+  }
 }

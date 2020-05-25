@@ -1,0 +1,107 @@
+#product-detail {
+    .product-wrapper {
+
+        img,
+        .product-item {
+            @include box-shadow-md;
+            @include transition-delay-sm;
+
+            &:hover {
+                @include box-shadow-lg;
+            }
+        }
+
+        .heading-secondary {}
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6rem;
+
+
+
+            &__img {
+                display: flex;
+                width: 65%;
+                padding-right: 2rem;
+
+                &-secondary {
+                    width: 24%;
+                    padding-right: 4rem;
+
+                    .image_item {
+                        margin-bottom: 3rem;
+                    }
+
+                }
+
+                &-main {
+                    width: 68%;
+                }
+            }
+
+            &__detail {
+                width: 35%;
+                padding-left: 2rem;
+
+                span.product-price {
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: 2.5rem;
+                    color: $color-secondary-1;
+                }
+            }
+        }
+
+        .related-product {
+            overflow: hidden;
+            margin-bottom: 6rem;
+
+            .section-header {
+                text-align: center;
+
+                .section-title {
+                    font-size: 2.6rem;
+                    font-weight: 800;
+                    color: $color-secondary-1;
+                }
+
+                .product-type {
+                    color: $color-secondary-2;
+                    font-weight: bold;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    position: relative;
+
+                    span {
+                        background-color: $color-best;
+                        padding: 1.5rem;
+                        display: inline-block;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        height: 2px;
+                        width: 100%;
+                        top: 50%;
+                        left: 0;
+                        background-color: $color-secondary-2;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                    }
+
+                }
+            }
+
+            .product-item {
+                padding: 1.5rem;
+                background-color: $color-best;
+            }
+        }
+    }
+}
