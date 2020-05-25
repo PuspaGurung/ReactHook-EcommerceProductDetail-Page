@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import Loader from '../ui/Loader';
-import { ProductContext } from '../../contextApi';
+import { ProductsContext } from '../../contextApi';
 import ProductCard from '../ui/ProductCard';
 
 const Products = () => {
-  const fetchData = useContext(ProductContext);
+  const fetchData = useContext(ProductsContext);
   return (
     <section id="products" className="page-section page-section--products">
       <div className="container">

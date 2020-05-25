@@ -1,18 +1,47 @@
-import React, { createContext, useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import Axios from 'axios';
 
-export const DarkModeContext = createContext({
+export const DarkModeContext = React.createContext({
   darkMode: true,
   toggleDarkMode: () => {},
 });
 
-export const ProductContext = React.createContext();
-const initialState = {
+export const ProductsContext = React.createContext();
+export const ProductDetailContext = React.createContext();
+
+const initialStateProducts = {
   loading: true,
   data: [],
   error: '',
 };
-const reducer = (state, action) => {
+const initialStateProductDetail = {
+  loading: true,
+  data: [],
+  error: '',
+};
+
+// Products reducer
+const reducerProducts = (state, action) => {
+  switch (action.type) {
+    case 'SUCCESS_FETCH_DATA':
+      return {
+        loading: false,
+        data: action.payload,
+        error: '',
+      };
+    case 'ERROR_FETCH_DATA':
+      return {
+        loading: false,
+        data: [],
+        error: 'Something went wrong !',
+      };
+    default:
+      return state;
+  }
+};
+
+// Product-detail reducer
+const reducerProductDetail = (state, action) => {
   switch (action.type) {
     case 'SUCCESS_FETCH_DATA':
       return {
@@ -34,22 +63,49 @@ const reducer = (state, action) => {
 const ContextApi = (props) => {
   const { children } = props;
   const [darkMode, setDarkMode] = useState(getInitialMode());
-  const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Products useReducer
+  const [stateProducts, dispatchProducts] = useReducer(
+    reducerProducts,
+    initialStateProducts
+  );
+
+  // Product-detail useReducer
+  const [stateProductDetail, dispatchProductDetail] = useReducer(
+    reducerProductDetail,
+    initialStateProductDetail
+  );
 
   useEffect(() => {
     /*
     In order to overcome from CORS policy error (No 'Access-Control-Allow-Origin' header is present on the requested resource) 
     just prefix  https://cors-anywhere.herokuapp.com/ with the API URL os that it makes the request to get that serverâ€™s response.    
     */
-    const api =
+
+    // Fetch Products
+    const apiProducts =
       'https://cors-anywhere.herokuapp.com/https://ecommerce.ktmcoders.com/api/products';
-    Axios.get(api)
+
+    Axios.get(apiProducts)
       .then((response) => {
         const { data } = response.data;
-        dispatch({ type: 'SUCCESS_FETCH_DATA', payload: data });
+        dispatchProducts({ type: 'SUCCESS_FETCH_DATA', payload: data });
       })
       .catch(() => {
-        dispatch({ type: 'ERROR_FETCH_DATA' });
+        dispatchProducts({ type: 'ERROR_FETCH_DATA' });
+      });
+
+    // Fetch Product Detail
+    const apiProductDetail =
+      'https://cors-anywhere.herokuapp.com/https://ecommerce.ktmcoders.com/api/products/1';
+
+    Axios.get(apiProductDetail)
+      .then((response) => {
+        const data = response.data.product_details;
+        dispatchProductDetail({ type: 'SUCCESS_FETCH_DATA', payload: data });
+      })
+      .catch(() => {
+        dispatchProductDetail({ type: 'ERROR_FETCH_DATA' });
       });
   }, []);
 
@@ -79,11 +135,13 @@ const ContextApi = (props) => {
 
   return (
     <>
-      <ProductContext.Provider value={state}>
+      <ProductsContext.Provider value={stateProducts}>
         <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-          {children}
+          <ProductDetailContext.Provider value={stateProductDetail}>
+            {children}
+          </ProductDetailContext.Provider>
         </DarkModeContext.Provider>
-      </ProductContext.Provider>
+      </ProductsContext.Provider>
     </>
   );
 };

@@ -49,6 +49,12 @@
                     font-weight: 800;
                     font-size: 2.5rem;
                     color: $color-secondary-1;
+                    display: inline-block;
+                    margin-bottom: 3rem;
+                }
+
+                .product-desc {
+                    color: $color-secondary-1;
                 }
             }
         }
@@ -61,17 +67,12 @@
                 text-align: center;
 
                 .section-title {
+                    // color: $color-secondary-2;
+                    text-transform: uppercase;
+                    position: relative;
                     font-size: 2.6rem;
                     font-weight: 800;
                     color: $color-secondary-1;
-                }
-
-                .product-type {
-                    color: $color-secondary-2;
-                    font-weight: bold;
-                    font-size: 2rem;
-                    text-transform: uppercase;
-                    position: relative;
 
                     span {
                         background-color: $color-best;
@@ -99,7 +100,6 @@
             }
 
             .product-item {
-                padding: 1.5rem;
                 background-color: $color-best;
             }
         }

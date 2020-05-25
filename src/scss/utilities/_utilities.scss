@@ -20,9 +20,8 @@ h1.heading-primary {
 h2.heading-secondary {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 0;
   text-transform: uppercase;
-  margin: 4rem 0;
+  margin: 0 0 4rem 0;
   font-weight: bold;
   color: $color-least;
 }
@@ -48,6 +47,14 @@ h3.heading-tertiary {
 .section-header {
   padding: 3rem 0 5rem;
 
+}
+
+// PRODUCT-ITEM
+.product-item-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  margin: 0 -1rem;
 }
 
 // BREADCRUMB
