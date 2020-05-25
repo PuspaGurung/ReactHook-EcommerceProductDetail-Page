@@ -134,6 +134,12 @@ const ProductDetail = (props) => {
                   <div className="product-wrapper">
                     <div className="product-item">
                       <img src={product.category.image} alt="product" />
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="product-item__anchor"
+                      >
+                        Link to product detail{' '}
+                      </Link>
                     </div>
                   </div>
                 </div>

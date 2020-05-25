@@ -1,0 +1,37 @@
+.body-wrapper--dark-mode {
+    background-color: $color-secondary-2;
+
+    .toggle-color-mode__label-2 {
+        color: $color-best;
+    }
+
+    #product-detail .product-wrapper .related-product .section-header .section-title span {
+        background-color: $color-secondary-2;
+        color: $color-tertiary-1;
+    }
+
+    #page-header {
+        background-color: $color-secondary-1;
+    }
+
+    #product-detail .product-wrapper .product__detail .product-desc,
+    h3.heading-tertiary,
+    #product-detail .product-wrapper .product__detail span.product-price {
+        color: $color-tertiary-1;
+    }
+
+    .product-item,
+    #product-detail .product-wrapper .related-product .product-item,
+    #page-footer {
+        background-color: $color-least;
+    }
+}
+
+.body-wrapper--dark-mode,
+#page-header,
+.product-item__info .product-price,
+h3.heading-tertiary,
+.product-item,
+.toggle-color-mode__label-2 {
+    @include transition-delay-sm;
+}
